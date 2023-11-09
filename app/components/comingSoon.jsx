@@ -86,7 +86,7 @@ const ComingSoon = () => {
       <div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{  }}
+        transition={{ duration: 1 }}
         className="text-center uppercase font-semibold text-white"
       >
         <motion.p
