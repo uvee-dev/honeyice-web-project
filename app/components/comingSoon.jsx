@@ -97,8 +97,8 @@ const ComingSoon = () => {
       </motion.div>
 
       <motion.div
-        initial={{ y:-200, opacity: 0 }}
-        animate={{ y:-165, opacity: 1 }}
+        initial={{ y:-100, opacity: 0 }}
+        animate={{ y:-40, opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         className="text-center md:hidden uppercase font-semibold text-white"
       >
