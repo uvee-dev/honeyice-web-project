@@ -6,7 +6,12 @@ const hkGrotesk = localFont({src: './fonts/HankenGrotesk-VariableFont_wght.ttf'}
 
 export const metadata = {
   title: "honeyïce",
-  description: "We promote love and authenticity."
+  description: "We promote love and authenticity.",
+  openGraph: {
+    title: "honeyïce",
+    description: "We promote love and authenticity.",
+    images: "/banner.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -16,6 +16,7 @@ const ComingSoon = () => {
           }}
           transition={{ duration: 1 }}
         >
+          {/* NEGRA movil */}
           <Image
             className="hidden md:flex relative top-1/2 left-1/2  translate-y-44 -translate-x-24 -z-20"
             src={"/coming/negra.png"}
@@ -40,6 +41,7 @@ const ComingSoon = () => {
           animate={{ x: 80, opacity:1 }}
           transition={{ duration: 1, delay: 0.1 }}
         >
+          {/* EYES movil */}
           <Image
             className="relative hidden md:flex top-1/2 left-1/2 -translate-x-28 -translate-y-[110px] -z-40"
             src={"/coming/eyes.png"}
