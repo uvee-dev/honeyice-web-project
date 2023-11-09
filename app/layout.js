@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={hkGrotesk.className}>
+      <body className={hkGrotesk.className + ' h-screen overflow-hidden'}>
         {children}
         </body>
     </html>
