@@ -90,16 +90,12 @@ const ComingSoon = () => {
         className="text-center uppercase font-semibold text-white"
       >
         <motion.p
-          initial={{ x: -150, scale: 0.5, opacity: 0 }}
-          animate={{ x: 0, scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
+   
         >
           More ice. Coming soon.
         </motion.p>
         <motion.p
-          initial={{ x: 150, scale: 0.5, opacity: 0 }}
-          animate={{ x: 0, scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
+
         >
           Mieles en camino.
         </motion.p>
