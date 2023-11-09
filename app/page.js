@@ -1,7 +1,11 @@
+'use client'
+import { AnimatePresence } from "framer-motion";
 import ComingSoon from "./components/comingSoon";
 
 export default function Home() {
   return (
-    <ComingSoon />
+    <AnimatePresence>
+      <ComingSoon />
+    </AnimatePresence>
   );
 }

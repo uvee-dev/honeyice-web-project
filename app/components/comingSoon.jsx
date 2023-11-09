@@ -7,10 +7,9 @@ import style from "./coming.module.css";
 const ComingSoon = () => {
   return (
     <div className={style.container + " w-full absolute h-screen"}>
-      <div className="h-[70%] w-full">
+      <motion.div duration={{duration: 1, daley:2}} className="h-[70%] w-full">
         {/* NEGRA */}
         <motion.div
-          initial={{ x: 0 }}
           animate={{
             x: 80,
           }}
@@ -27,7 +26,7 @@ const ComingSoon = () => {
         {/* NEGRA movil */}
         <motion.div animate={{ x: 45 }} transition={{ duration: 1 }}>
           <Image
-            className="relative md:hidden top-1/2 left-1/2  translate-y-48 -translate-x-11 -z-20"
+            className="relative md:hidden top-1/2 left-1/2  translate-y-48 -translate-x-11"
             src={"/coming/negra.png"}
             width={324.19 / 2}
             height={448.16 / 2}
@@ -52,7 +51,7 @@ const ComingSoon = () => {
         {/* EYES movil */}
         <motion.div
           animate={{ x: 45 }}
-          transition={{ duration: 1, delay: 0.1 }}
+          transition={{ duration: 1 }}
         >
           <Image
             className="relative md:hidden top-1/2 left-1/2 -translate-x-[50px] translate-y-[45px] -z-40"
@@ -77,7 +76,7 @@ const ComingSoon = () => {
             alt="3/3 Woman Design"
           />
         </motion.div>
-        <motion.div animate={{ x: -45 }} transition={{ duration: 1 }}>
+        <motion.div initial={{x: 0, opacity: 1}} animate={{ x: -45 }} transition={{ duration: 1,  daley: 5 }}>
           <Image
             className="relative md:hidden left-1/2 -translate-x-[60px] -translate-y-[5px]  -z-30"
             src={"/coming/ojos.png"}
@@ -86,16 +85,16 @@ const ComingSoon = () => {
             alt="3/3 Woman Design"
           />
         </motion.div>
-      </div>
-      <div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+      </motion.div>
+      <motion.div
+        initial={{ y:-30, opacity: 0 }}
+        animate={{ y:50, opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
         className="text-center uppercase font-semibold text-white"
       >
-        <motion.p>More ice. Coming soon.</motion.p>
+        <motion.p>More Ïce coming soon.</motion.p>
         <motion.p>Mieles en camino.</motion.p>
-      </div>
+      </motion.div>
     </div>
   );
 };
