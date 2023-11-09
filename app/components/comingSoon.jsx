@@ -6,7 +6,7 @@ import style from "./coming.module.css";
 
 const ComingSoon = () => {
   return (
-    <div className={style.container + " w-full absolute max-h-screen"}>
+    <div className={style.container + " w-full absolute h-screen"}>
       <div className="h-[70%] w-full">
         {/* NEGRA */}
         <motion.div
