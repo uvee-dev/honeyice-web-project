@@ -90,7 +90,17 @@ const ComingSoon = () => {
         initial={{ y:-30, opacity: 0 }}
         animate={{ y:50, opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="text-center uppercase font-semibold text-white"
+        className="text-center hidden md:flex flex-col uppercase font-semibold text-white"
+      >
+        <motion.p>More Ïce coming soon.</motion.p>
+        <motion.p>Mieles en camino.</motion.p>
+      </motion.div>
+
+      <motion.div
+        initial={{ y:-30, opacity: 0 }}
+        animate={{ y:15, opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="text-center md:hidden uppercase font-semibold text-white"
       >
         <motion.p>More Ïce coming soon.</motion.p>
         <motion.p>Mieles en camino.</motion.p>
