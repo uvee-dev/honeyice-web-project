@@ -12,11 +12,10 @@ const ComingSoon = () => {
         <motion.div
           initial={{ x: 0 }}
           animate={{
-            x:80
+            x: 80,
           }}
           transition={{ duration: 1 }}
         >
-          {/* NEGRA movil */}
           <Image
             className="hidden md:flex relative top-1/2 left-1/2  translate-y-44 -translate-x-24 -z-20"
             src={"/coming/negra.png"}
@@ -25,9 +24,10 @@ const ComingSoon = () => {
             alt="1/3 Woman Design"
           />
         </motion.div>
+        {/* NEGRA movil */}
         <motion.div animate={{ x: 45 }} transition={{ duration: 1 }}>
           <Image
-            className="relative md:hidden top-1/2 left-1/2  translate-y-60 -translate-x-11 -z-20"
+            className="relative md:hidden top-1/2 left-1/2  translate-y-48 -translate-x-11 -z-20"
             src={"/coming/negra.png"}
             width={324.19 / 2}
             height={448.16 / 2}
@@ -37,11 +37,10 @@ const ComingSoon = () => {
 
         {/* EYES */}
         <motion.div
-          initial={{ opacity:0 }}
-          animate={{ x: 80, opacity:1 }}
+          initial={{ opacity: 0 }}
+          animate={{ x: 80, opacity: 1 }}
           transition={{ duration: 1, delay: 0.1 }}
         >
-          {/* EYES movil */}
           <Image
             className="relative hidden md:flex top-1/2 left-1/2 -translate-x-28 -translate-y-[110px] -z-40"
             src={"/coming/eyes.png"}
@@ -50,12 +49,13 @@ const ComingSoon = () => {
             alt="2/3 Woman Design"
           />
         </motion.div>
+        {/* EYES movil */}
         <motion.div
           animate={{ x: 45 }}
           transition={{ duration: 1, delay: 0.1 }}
         >
           <Image
-            className="relative md:hidden top-1/2 left-1/2 -translate-x-[50px] translate-y-[95px] -z-40"
+            className="relative md:hidden top-1/2 left-1/2 -translate-x-[50px] translate-y-[45px] -z-40"
             src={"/coming/eyes.png"}
             width={118.03 / 2}
             height={95 / 2}
@@ -64,7 +64,11 @@ const ComingSoon = () => {
         </motion.div>
 
         {/* OJOS */}
-        <motion.div initial={{x:0}} animate={{ x: -80 }} transition={{ duration: 1 }}>
+        <motion.div
+          initial={{ x: 0 }}
+          animate={{ x: -80 }}
+          transition={{ duration: 1 }}
+        >
           <Image
             className="relative hidden md:flex left-1/2 -translate-x-[128px] -translate-y-[215px]  -z-30"
             src={"/coming/ojos.png"}
@@ -75,7 +79,7 @@ const ComingSoon = () => {
         </motion.div>
         <motion.div animate={{ x: -45 }} transition={{ duration: 1 }}>
           <Image
-            className="relative md:hidden left-1/2 -translate-x-[60px] translate-y-[43px]  -z-30"
+            className="relative md:hidden left-1/2 -translate-x-[60px] -translate-y-[5px]  -z-30"
             src={"/coming/ojos.png"}
             width={165 / 2}
             height={117 / 2}
@@ -89,16 +93,8 @@ const ComingSoon = () => {
         transition={{ duration: 1 }}
         className="text-center uppercase font-semibold text-white"
       >
-        <motion.p
-   
-        >
-          More ice. Coming soon.
-        </motion.p>
-        <motion.p
-
-        >
-          Mieles en camino.
-        </motion.p>
+        <motion.p>More ice. Coming soon.</motion.p>
+        <motion.p>Mieles en camino.</motion.p>
       </div>
     </div>
   );
