@@ -5,7 +5,7 @@ import { useScroll, useTransform, AnimatePresence, motion } from "framer-motion"
 import Image from "next/image";
 import Lenis from "@studio-freight/lenis";
 import { useMediaQuery } from "react-responsive";
-import Modal from "./Modal"; // Asegúrate de ajustar la ruta correcta a tu componente Modal
+import Modal from "./modal"; // Asegúrate de ajustar la ruta correcta a tu componente Modal
 
 import styles from "./paralax.module.scss";
 
