@@ -24,82 +24,66 @@ export default function Gallery({ params }) {
     }
   }, [controls, inView]);
 
-  // Verificar si se encontró un artista con el slug proporcionado
   if (!artist) {
     return <p>Artista no encontrado</p>;
   }
 
   return (
-    <div className="py-10 md:py-24">
-      <motion.div
-        ref={ref}
-        className="relative h-[550px] flex flex-col justify-center text-white text-center bg-contain bg-no-repeat bg-center overflow-hidden"
-        style={{ backgroundImage: `url(${artist.photo})` }}
-        initial={{ opacity: 0, y: 50 }}
-        animate={controls}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-      >
-        <motion.h2
-          className="text-3xl md:text-5xl lg:text-6xl leading-tight font-bold mb-4 md:mb-8 text-shadow"
-          initial={{ opacity: 0, y: 20 }}
-          animate={controls}
-          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
-        >
-          <motion.span
-            className="block"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.5 }}
+    <div className="py-10 md:py-24 flex flex-col md:flex-row">
+      {/* Columna Fija con la foto y firma del artista */}
+      <div className="h-[550px] md:w-[30%] flex-shrink-0 mb-8 md:mb-0 text-white text-center bg-contain bg-no-repeat bg-center overflow-visible overflow-hidden sticky top-0">
+        <div className="h-full flex flex-col justify-end items-center">
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={controls}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
           >
-            {artist.name}
-          </motion.span>
-          <motion.span
-            className="block"
+            <Image
+              src={artist.photo}
+              width={550}
+              height={700}
+              alt="artist-photo"
+            />
+          </motion.div>
+          <motion.div
+            className="absolute -bottom-5 -right-10 overflow-visible left-1/2 transform -translate-x-1/2"
             initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
+            animate={{ opacity: 1, x: 30 }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 1.0 }}
           >
-            {artist.lastName}
-          </motion.span>
-        </motion.h2>
-        <motion.p
-          className="text-base md:text-lg mb-8 text-shadow"
-          initial={{ opacity: 0, y: 20 }}
-          animate={controls}
-          transition={{ duration: 0.8, ease: "easeInOut", delay: 0.8 }}
-        >
-          {artist.role}
-        </motion.p>
+            <Image
+              src={artist.signature}
+              width={300}
+              height={150}
+              alt="signature"
+            />
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Columna con scroll que inicialmente muestra la información del artista */}
+      <div className="md:w-[70%] flex flex-col justify-center items-center">
         <motion.div
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 30 }}
-          transition={{ duration: 0.8, ease: "easeInOut", delay: 1.0 }}
-        >
-          <Image
-            src={artist.signature}
-            width={250}
-            height={100}
-            alt="signature"
-          />
-        </motion.div>
-      </motion.div>
-      <div className="flex justify-center">
-        <motion.p
-          className="md:w-2/3 my-48"
+          ref={ref}
+          className="md:w-2/3 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
         >
-          {artist.bio}
-        </motion.p>
-      </div>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl leading-tight font-bold mb-4 md:mb-8 text-shadow">
+            <span className="block">
+              {artist.name} {artist.lastName}
+            </span>
+          </h2>
+          <p className="text-base md:text-lg mb-8 text-shadow">{artist.role}</p>
+          <p>{artist.bio}</p>
+        </motion.div>
 
-      {/* Agrega más propiedades según las que tenga tu objeto 'artist' */}
-
-      <div className="">
-        <Parallax works={artistWork} />
+        {/* Parallax debajo de la información del artista */}
+        <div className="md:w-2/3">
+          <Parallax works={artistWork} />
+        </div>
       </div>
     </div>
   );
