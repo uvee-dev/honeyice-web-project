@@ -31,7 +31,7 @@ export default function Gallery({ params }) {
   return (
     <div className="py-10 md:py-24 flex flex-col md:flex-row">
       {/* Columna Fija con la foto y firma del artista */}
-      <div className="h-[550px] md:w-[30%] flex-shrink-0 mb-8 md:mb-0 text-white text-center bg-contain bg-no-repeat bg-center overflow-visible overflow-hidden sticky top-0">
+      <div className="h-[550px] md:w-[30%] flex-shrink-0 mb-8 md:mb-0 text-white text-center bg-contain bg-no-repeat bg-center overflow-y-visible sticky top-40">
         <div className="h-full flex flex-col justify-end items-center">
           <motion.div
             className="mb-8"
@@ -63,7 +63,7 @@ export default function Gallery({ params }) {
       </div>
 
       {/* Columna con scroll que inicialmente muestra la información del artista */}
-      <div className="md:w-[70%] flex flex-col justify-center items-center">
+      <div className="md:w-[70%] flex flex-col justify-center items-center overflow-y-auto">
         <motion.div
           ref={ref}
           className="md:w-2/3 mb-8"
@@ -71,12 +71,12 @@ export default function Gallery({ params }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut", delay: 1 }}
         >
-          <h2 className="text-3xl md:text-5xl lg:text-6xl leading-tight font-bold mb-4 md:mb-8 text-shadow">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl leading-tight font-bold mb-1 md:mb-2 text-shadow">
             <span className="block">
               {artist.name} {artist.lastName}
             </span>
           </h2>
-          <p className="text-base md:text-lg mb-8 text-shadow">{artist.role}</p>
+          <p className="text-base md:text-lg mb-8 text-shadow italic font-light">{artist.role}</p>
           <p>{artist.bio}</p>
         </motion.div>
 

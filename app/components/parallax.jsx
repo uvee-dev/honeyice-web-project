@@ -80,8 +80,8 @@ const Parallax = ({ works }) => {
           <Column
             key={index}
             works={works.slice(
-              index * (works.length / calculateColumns()),
-              (index + 1) * (works.length / calculateColumns())
+              index * (works.length / 2),
+              (index + 1) * (works.length / 2)
             )}
             y={index === 0 ? y : y2}
             onImageClick={openModal}
